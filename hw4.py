@@ -107,8 +107,6 @@ def longest_unique_subarray(arr):
 				if arr[b] == arr[b + 1]:
 					break
 
-	pass
-
 
 """
 string_my_one_true_love
@@ -150,8 +148,6 @@ Example 3:
 		False
 """
 def string_my_one_true_love(s):
-
-
 	pass
 
 
