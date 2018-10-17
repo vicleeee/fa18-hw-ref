@@ -13,7 +13,25 @@ most_common_char
 Given an input string s, return the most common character in s.
 """
 def most_common_char(s):
-	pass
+	s = s.lower()
+	new_string = "".join(s.split())
+	i = 0
+	return_char = ""
+
+	for i in range(0, len(new_string)):
+		count = 0
+		length = len(new_string)
+		j = 0
+		character = new_string[i]
+		while length > 0:
+			if (character == new_string[j]):
+				count += 1
+				j += 1
+				length -= 1
+				if (i <= count):
+					i = count
+					return_char = character
+	return return_char
 
 
 """
@@ -36,8 +54,33 @@ Example 2:
 	Return:
 		None
 """
+
 def alphabet_finder(s):
-	pass
+    dict = {}
+    alapha = "abcdefghijklmnopqrstuvwxyz"
+    for letter in alapha:
+        dict[letter] = 0
+
+    prefix_list = s.split()
+
+    valid_prefix = []
+    for a in prefix_list:
+        if len(a) >= 26:
+            valid_prefix.append(a)
+
+    s = s.lower()
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 """
@@ -56,6 +99,14 @@ Example:
 		[1, 6]
 """
 def longest_unique_subarray(arr):
+	length = len(arr)
+	for a in range(0, length):
+		if arr[a] != arr[a + 1]:
+			a += 1
+			for b in range (a, length):
+				if arr[b] == arr[b + 1]:
+					break
+
 	pass
 
 
@@ -99,6 +150,8 @@ Example 3:
 		False
 """
 def string_my_one_true_love(s):
+
+
 	pass
 
 
@@ -117,7 +170,27 @@ Example:
 		1961
 """
 def alive_people(data):
-	pass
+    dict = {}
+    for a in data:
+        dict[a[0]] = a[0] + a[1]
+
+    birth_year = []
+    for i in dict.items():
+        birth_year.append(i[len(i) - 1])
+    #print(birth_year)
+    birth_year.sort(key=int, reverse=False)
+    print(birth_year)
+
+    max_birth_year = birth_year[0]
+    death_year = []
+    for j in dict.values():
+        death_year.append(j)
+    death_year.sort()
+    min_death_year = death_year[0]
+    print(min_death_year)
+
+    if max_birth_year == min_death_year:
+        return None
 
 
 """
@@ -194,6 +267,14 @@ Example 2:
 		[1, 2]
 """
 def zero_sum_subarray(arr):
-    pass 
+	arr_size = len(arr)
+
+	for i in range(0, arr_size):
+		if (arr[i] + arr[i + 1] == 0):
+            return [i, i + 1]
+
+
+
+
 
 
